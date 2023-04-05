@@ -1,0 +1,39 @@
+mixin header(headerMods, currentUrl)
+  -
+    const headerLinks = [
+      {
+        href: "#",
+        text: "Mobile Top Up",
+        isActive: true,
+      },
+      {
+        href: "#",
+        text: "About"
+      },
+      {
+        href: "#",
+        text: "Rate"
+      },
+      {
+        href: "#",
+        text: "Help"
+      }
+    ]
+
+  header.header(class=headerMods)
+    .container
+      .header__wrapper
+        if(currentUrl === "index.html")
+          span.header__logo
+            +icon("logo", 131, 40)
+        else
+          a.header__logo(href="index.html", aria-label="Переход на главную")
+            +icon("logo", 131, 40)
+        nav.main-nav(data-menu)
+          button(type="button" aria-label="Переключатель отображения меню", aria-pressed="false" data-menu-toggle).btn-reset.main-nav__toggle
+          .main-nav__wrapper
+            ul.main-nav__list
+              each item in headerLinks
+                li.main-nav__item
+                  a.main-nav__link(class={"is-active" : item.isActive} href=item.href)!=item.text
+            +btn({text: "Sign Up", type: "button"}).main-nav__button

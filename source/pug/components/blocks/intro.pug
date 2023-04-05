@@ -1,0 +1,53 @@
+mixin intro()
+  section.intro
+    .container
+      .intro__wrapper
+        .intro__main-content
+          h1.intro__title
+            | Now Buy Your
+            =" "
+            br
+            | PIN or #[span Top Up]
+            =" "
+            br
+            | With Bank Transfer
+          p.intro__description(data-description)  We&nbsp;Make international calling simple, relible, and cheap basedon your unique calling behavior.
+          +btn({text: "Get Started", type: "button"}).intro__button
+          .intro__form(data-form-validate)
+            form(method="get")
+              .intro__form-wrapper
+                .intro__input
+                  label(for="search").visually-hidden Поле поиска
+                  input(type="text" name="search" id="search" placeholder="Where do you want to call?" minlength="4" maxlength="12" data-input data-placeholder-desktop="Where do you want to call?" data-placeholder-mobile="Where will we call?")
+                +btn({type: "submit", icon: {name: "icon-search", width: 27, height: 27}}).btn--icon.intro__submit-button(data-submit-button)
+          .intro__info
+            ul.intro__list
+              li.intro__item
+                +picture("content/users", "user-1", "png", 38, 38, "user picture")
+              li.intro__item
+                +picture("content/users", "user-2", "png", 38, 38, "user picture")
+              li.intro__item
+                +picture("content/users", "user-3", "png", 38, 38, "user picture")
+              li.intro__item
+                button(type="button").btn-reset.intro__more-button
+                  +icon("icon-plus", 19, 19)
+            p.intro__text 45k+ Regular User.
+              =" "
+              a(href="#") View Price Plan
+        .intro__additional-info(data-animation)
+          .intro__image-wrapper
+            +picture("content", "woman-with-phone", "png", 774, 557, "woman with phone")
+          .intro__circle
+            svg(width='450', height='450', viewBox='0 0 450 450', fill='none', xmlns='http://www.w3.org/2000/svg')
+              circle(cx='225', cy='225', r='224', stroke='#E8E8E8', stroke-width='2')
+            .intro__flag-image.intro__flag-image--first
+              +picture("content/flags", "flag-india", "png", 30, 30, "flag of India")
+            .intro__flag-image.intro__flag-image--second
+              +picture("content/flags", "flag-united-kingdom", "png", 60, 60, "flag of United Kingdom")
+            .intro__flag-image.intro__flag-image--third
+              +picture("content/flags", "flag-italy", "png", 40, 40, "flag of Italy")
+            .intro__flag-image.intro__flag-image--fourth
+              +picture("content/flags", "flag-india-big", "png", 50, 50, "flag of India")
+            .intro__flag-image.intro__flag-image--fifth
+              +picture("content/flags", "flag-india", "png", 30, 30, "flag of India")
+          span.intro__inner-circle

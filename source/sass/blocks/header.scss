@@ -1,0 +1,38 @@
+.header {
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+
+    @include vp-767 {
+      padding: 20px 0;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    display: block;
+    width: 131px;
+    height: 40px;
+    margin-right: 40px;
+
+    @include vp-1023 {
+      margin-right: 20px;
+    }
+
+    @include vp-767 {
+      z-index: 11;
+
+      margin-right: 0;
+    }
+
+    svg {
+      display: block;
+      width: 131px;
+      height: 40px;
+    }
+  }
+}
